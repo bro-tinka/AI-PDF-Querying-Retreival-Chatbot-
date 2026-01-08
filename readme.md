@@ -43,7 +43,7 @@ pdf_chatbot/
 
 ![PDF Chatbot UI](screenshots/img1.png)
 
-> Example showing PDF UI
+> Example showing PDF UI interface
 
 ![PDF Chatbot Response ](screenshots/img2.png)
 
