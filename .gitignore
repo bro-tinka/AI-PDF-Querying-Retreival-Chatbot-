@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual env (if any)
+venv/
+.env/
+
+# Temp / uploaded PDFs
+chatbot_v2_rag/temp_pdfs/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
