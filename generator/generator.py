@@ -3,13 +3,17 @@ from google import genai
 
 # client get api key from : environment variable `GEMINI_API_KEY`
 
+#MODELS YOU CAN USE 
+model1 =  "gemini-flash-latest"
+model2 =  "gemini-pro-latest"
+model3 =  "gemini-flash-lite-latest"
+
 class LLMGenerator:
-    def __init__(self, api_key=None, model_name="gemini-3-flash-preview"):
+    def __init__(self, api_key=None, model_name = "gemini-2-nano-2"):
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
             raise ValueError("GEMINI_API_KEY daalo bhai!")
         self.client = genai.Client(api_key=api_key)
-        self.model_name =model_name
         
 
     def generate_answer(self, query, context):
@@ -27,9 +31,37 @@ class LLMGenerator:
 
                 """
 
-        response = self.client.models.generate_content(
-                    model=self.model_name, 
+        try:
+            response = self.client.models.generate_content(
+                    model=model1, 
                     contents=prompt
                     )
-        
-        return response.text
+            print("answered by model:",{model1})
+            return response.text
+            
+        except Exception as e:
+            print("Model 1 failed : ",e)
+
+        try:
+            response = self.client.models.generate_content(
+                    model=model2,
+                    contents=prompt
+                    )
+            print("answered by model:",{model2})
+            return response.text
+            
+        except Exception as e:
+            print("Model 2 failed : ",e)
+
+        try:
+            response = self.client.models.generate_content(
+                    model=model3, 
+                    contents=prompt
+                    )
+            print("answered by model:",{model3})
+            return response.text
+            
+        except Exception as e:
+            print("Model 3 failed : ",e)
+
+        return "LLMs are under heavy load! Please try later!"

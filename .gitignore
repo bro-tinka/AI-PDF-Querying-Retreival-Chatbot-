@@ -13,4 +13,5 @@ temp_pdfs/
 .ipynb_checkpoints/
 
 #workspace
-.code-workspace
+*.code-workspace
+.vscode/
