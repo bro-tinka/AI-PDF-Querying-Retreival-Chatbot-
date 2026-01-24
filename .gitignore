@@ -7,7 +7,10 @@ venv/
 .env/
 
 # Temp / uploaded PDFs
-chatbot_v2_rag/temp_pdfs/
+temp_pdfs/
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
+
+#workspace
+.code-workspace
