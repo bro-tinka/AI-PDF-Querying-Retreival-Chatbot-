@@ -58,8 +58,8 @@ Flow:
 
 ```
 AI CHATBOT
-│   app-gradio.py   --- │\  OPTION 1
-│   app-fastapi.py  --- │/  OPTION 2
+│   app_gradio.py   --- │\  OPTION 1
+│   app_fastapi.py  --- │/  OPTION 2
 │   readme.md
 │
 ├── generator/
@@ -82,12 +82,16 @@ AI CHATBOT
 
 ## ⚙️ Setup Instructions
 
-### 1️⃣ Create virtual environment (recommended)
+### 1️⃣ Create virtual environment & activate it
+
 
 ```bash
-python -m venv venv
-venv\Scripts\activate   # Windows
+conda create -n env_chatbot
 ```
+```bash
+conda activate env_chatbot
+```
+
 
 ### 2️⃣ Install dependencies
 
@@ -120,16 +124,24 @@ STEP 1 : Go to `AI CHATBOT` in terminal:
 
 **Method1 : app-gradio (built in ui)**
 ```bash
-uvicorn app-gradio:app --host 0.0.0.0 --port 7860
+uvicorn app_gradio:app --host 0.0.0.0 --port 7860
 ```
 
 **Method2 : app-fastapi (custom html css js)**
 ```bash
-uvicorn app-fastapi:app --host 0.0.0.0 --port 7860 --reload
+uvicorn app_fastapi:app --host 0.0.0.0 --port 7860 
 ```
 
-Open in browser:
+## Screenshots
 
+### Method 1 : Gradio built interface
+<img src="screenshots/pic-gradio.png" width="800" />
+
+### Method 2 : FastAPI built custom interface
+<img src="screenshots/pic-fastapi.png" width="800" />
+
+
+Open in browser:
 ```
 http://localhost:7860
 ```
